@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/short_term"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Short Term"
+        android:tooltipText="0 to 1 year"
+        app:rippleColor="@color/ripple" />
+
+    <Button
+        android:id="@+id/mid_term"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mid Term"
+        android:tooltipText="1 to 3 years"
+        app:rippleColor="@color/ripple" />
+
+    <Button
+        android:id="@+id/long_term"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Long term"
+        android:tooltipText="3 to 20 years"
+        app:rippleColor="@color/ripple" />
+</LinearLayout>

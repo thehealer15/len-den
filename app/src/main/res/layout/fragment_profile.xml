@@ -1,0 +1,112 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10sp"
+    tools:context="Screens.fragment_profile">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="DuplicateIds" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/modigavali"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10sp">
+
+            <ImageView
+                android:id="@+id/userimg_profile"
+                android:layout_width="101dp"
+                android:layout_height="97dp"
+                android:layout_margin="8sp"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.048"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.023" />
+
+            <TextView
+                android:id="@+id/username_profile"
+                android:layout_width="234dp"
+                android:layout_height="93dp"
+                android:layout_margin="8sp"
+                android:padding="5sp"
+                android:text="click here to\n edit profile"
+
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.557"
+                app:layout_constraintStart_toEndOf="@+id/userimg_profile"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/modigavali"
+        android:layout_width="wrap_content"
+        android:layout_height="1sp"
+        android:layout_margin="2sp"
+        android:backgroundTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5sp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modigavali">
+
+        <Button
+            android:id="@+id/all_orders_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="12sp"
+            android:text="All orders"
+            app:rippleColor="@color/ripple" />
+
+        <Button
+            android:id="@+id/help_n_support_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="12sp"
+            android:text="Help And Support"
+            app:rippleColor="@color/ripple" />
+
+        <Button
+            android:id="@+id/log_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log Out" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

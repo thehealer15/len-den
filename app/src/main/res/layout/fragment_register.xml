@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="Screens.authentication.registerFragment" >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:ems="10"
+        android:hint="Name"
+        android:id="@+id/name_register"
+        android:inputType="textPersonName"
+        android:padding="5sp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:ems="10"
+        android:hint="Surname"
+        android:id="@+id/surname_register"
+        android:inputType="textPersonName"
+        android:padding="5sp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:ems="10"
+        android:hint="PAN"
+        android:id="@+id/pan_register"
+        android:inputType="textPersonName"
+        android:padding="5sp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:ems="10"
+        android:id="@+id/bank_ac_register"
+        android:hint="Bank Account"
+        android:inputType="textPersonName"
+        android:padding="5sp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:ems="10"
+        android:id="@+id/email_register"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:padding="5sp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:ems="10"
+        android:hint="passwd"
+        android:inputType="textPersonName"
+        android:padding="5sp"
+        android:id="@+id/passwd_register"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/create_ac_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        app:rippleColor="@color/ripple" />
+
+
+</LinearLayout>

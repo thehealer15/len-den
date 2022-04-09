@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/login_screen_bg.xml" value="0.28489583333333335" />
+        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.28489583333333335" />
+        <entry key="app/src/main/res/drawable/rounded_corner_button.xml" value="0.14947916666666666" />
+        <entry key="app/src/main/res/layout/account_details_fragament.xml" value="0.265625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_payment.xml" value="0.2677083333333333" />
+        <entry key="app/src/main/res/layout/bottom_sheet_feedfragment.xml" value="0.26614583333333336" />
+        <entry key="app/src/main/res/layout/feed_fragment.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/fragment_bottom_sheet_dialog.xml" value="0.26614583333333336" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.275" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/welcome_activity.xml" value="0.2609375" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />
+        <entry key="app/src/main/res/menu/switch_mode.xml" value="0.275" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
