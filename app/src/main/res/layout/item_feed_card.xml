@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5sp"
+    android:orientation="vertical"
+    android:padding="10sp">
+
+    <TextView
+        android:id="@+id/credit_score_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:hint="credit score"
+        android:padding="10sp"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/interest_rate_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:hint="interest rate"
+        android:padding="10sp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/amount_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:hint="Amount"
+        android:padding="10sp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tenure_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:hint="Tenure"
+        android:padding="10sp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/deal_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:padding="10sp"
+        android:text="Deal!"
+        android:textSize="18sp" />
+</LinearLayout>

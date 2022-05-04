@@ -49,6 +49,7 @@
         android:layout_width="409dp"
         android:layout_height="572dp"
         android:orientation="vertical"
+        android:padding="15sp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btn_layout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +64,7 @@
             android:layout_margin="10sp"
             android:hint="Mobile No. without +91"
             android:padding="10sp"
+            android:text="7666278774"
             android:textSize="34sp" />
 
         <Button
@@ -75,8 +77,7 @@
         <View
             android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="20sp"
-            android:background="@color/white" />
+            android:layout_height="20sp" />
 
         <EditText
             android:id="@+id/otp_et"
@@ -85,6 +86,7 @@
             android:layout_margin="10sp"
             android:hint="enter otp"
             android:padding="10sp"
+            android:text="123456"
             android:textSize="34sp"
             android:visibility="invisible" />
 
@@ -94,17 +96,8 @@
             android:layout_height="wrap_content"
             android:text="Verify Otp"
             android:visibility="invisible"
-            app:rippleColor="@color/ripple"
-            />
+            app:rippleColor="@color/ripple" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12sp"
-            android:padding="15sp"
-            android:text="for hackathon; if unable to login  use number : 7666278774 and otp : 123456"
-            android:textSize="24sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

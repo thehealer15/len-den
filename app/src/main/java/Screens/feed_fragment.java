@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +30,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.example.app.R;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
+
+import RecyclerViewRelatedAll.LenAdapter;
+import RecyclerViewRelatedAll.feed_item_model;
 
 /*
 * my features :==>
@@ -66,22 +73,15 @@ now add realtime data base of firebase
 public class feed_fragment extends Fragment {
     private View parentHolder;
     private Context context;
-
-    Button short_term , long_term;
-    EditText short_term_qnty, long_term_qnty;
-    TextView short_term_amount , long_term_amount;
-
-    private void init(){
-        short_term = parentHolder.findViewById(R.id.btn1);
-        long_term = parentHolder.findViewById(R.id.btn2);
-
-        short_term_qnty = parentHolder.findViewById(R.id.qnty_short_term);
-        long_term_qnty = parentHolder.findViewById(R.id.qnty_long_term);
-
-        long_term_amount = parentHolder.findViewById(R.id.amnt_long_term);
-        short_term_amount = parentHolder.findViewById(R.id.amnt_short_term);
-
-    }
+    RecyclerView lendingView;
+    feed_item_model data[] = new feed_item_model[]{
+//    public feed_item_model(String credit_score, String amount, String tenure, String interest_rate) {
+            new feed_item_model("435" , "100 inr" , "2 years" , "5.678"),
+            new feed_item_model("451" , "100 inr" , "2 years" , "5.678"),
+            new feed_item_model("435" , "100 inr" , "2 years" , "5.678"),
+            new feed_item_model("232" , "100 inr" , "2 years" , "12.678"),
+            new feed_item_model("435" , "100 inr" , "2 years" , "7.678")
+    };
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -97,42 +97,35 @@ public class feed_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         parentHolder =  inflater.inflate(R.layout.feed_fragment, container, false);
+        lendingView = parentHolder.findViewById(R.id.lendgin_view);
+        LenAdapter adapter = new LenAdapter(data);
+        try{
 
-        init();
-
-
-
-        short_term.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buyShortTerm();
-            }
-        });
-        long_term.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buyLongTerm();
-            }
-        });
+            lendingView.setHasFixedSize(true);
+            lendingView.setLayoutManager(new LinearLayoutManager(context));
+            lendingView.setAdapter(adapter);
+        }catch (Exception e){
+            Log.d("errmsg" , e.getMessage());
+            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
 
         return parentHolder;
  }
 
-    private void updateQuantity(Integer qty , boolean isLongTerm){
-        try{
-            DatabaseReference usr_portfolio = FirebaseDatabase.getInstance().getReference().child("portfolio").child(FirebaseAuth.getInstance().getUid());
-            if (isLongTerm)
-                usr_portfolio.child("long_term").setValue(qty);
-            else
-                usr_portfolio.child("short_term").setValue(qty);
 
-            short_term_qnty.setText("");
-            long_term_qnty.setText("");
-            short_term_amount.setText("");
-            long_term_amount.setText("");
+    private void showSnackBar(String text){
+        Snackbar.make(getActivity().findViewById(android.R.id.content), text, Snackbar.LENGTH_LONG)
+                .show();
+    }
+    private void showToast(String text){
+        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
+    }
+}
+/*
+Alertdialog box code dump
 
-            new AlertDialog.Builder(context)
+ new AlertDialog.Builder(context)
                     .setTitle("Investment Done!")
                     .setMessage("Congratulations you have invested in most recession proof asset class")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
@@ -145,46 +138,4 @@ public class feed_fragment extends Fragment {
                     .setNegativeButton(android.R.string.no, null)
                     .setIcon(android.R.drawable.star_on)
                     .show();
-        }catch (Exception e){
-            Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    private void buyShortTerm(){
-        if(short_term_qnty.getText().toString().length() == 0){
-            showSnackBar("Enter Quantity");
-            short_term_qnty.setError("Quantity > 0");
-        }
-        try{
-            Integer qty = Integer.parseInt(short_term_qnty.getText().toString());
-            String temp = qty*800 +"";
-            short_term_amount.setText(temp);
-            updateQuantity(qty ,false);
-        }catch (Exception e){
-            showSnackBar(e.getMessage());
-        }
-    }
-    private void buyLongTerm(){
-        if(long_term_qnty.getText().toString().length() == 0){
-            showSnackBar("Enter Quantity");
-            long_term_qnty.setError("Quantity > 0");
-        }
-        try{
-            Integer qty = Integer.parseInt(long_term_qnty.getText().toString());
-            String temp = qty*800 +"";
-            long_term_amount.setText(temp);
-            updateQuantity(qty , true);
-        }catch (Exception e){
-            showSnackBar(e.getMessage());
-        }
-    }
-
-    private void showSnackBar(String text){
-        Snackbar.make(getActivity().findViewById(android.R.id.content), text, Snackbar.LENGTH_LONG)
-                .show();
-    }
-    private void showToast(String text){
-        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
-    }
-}
+* */

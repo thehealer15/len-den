@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home_btn"
-        android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:icon="@drawable/ic_baseline_arrow_upward_24"
+        android:title="Len" />
 
     <item
         android:id="@+id/dashboard_btn"
-        android:icon="@drawable/ic_dashboard"
-        android:title="DashBoard" />
+        android:icon="@drawable/ic_baseline_arrow_downward_24"
+        android:title="Den" />
 
     <item
         android:id="@+id/profile_btn"

@@ -36,7 +36,7 @@ public class WelcomeActivity extends AppCompatActivity {
     Button send_otp_btn , submit_otp_btn;
     private FirebaseAuth mAuth;
     private String verificationId;
-
+    View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         mobile_no_et = findViewById(R.id.mobile_no_et);
         otp_et = findViewById(R.id.otp_et);
-
+        view = findViewById(R.id.view3);
         send_otp_btn =  findViewById(R.id.send_otp_btn);
         submit_otp_btn = findViewById(R.id.verify_otp_btn);
         mAuth = FirebaseAuth.getInstance();

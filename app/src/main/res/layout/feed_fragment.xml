@@ -5,98 +5,15 @@
     android:layout_height="match_parent"
     tools:context="Screens.feed_fragment">
 
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12sp"
-        android:orientation="vertical"
-        android:padding="10sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lendgin_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5sp"
+        android:padding="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="50sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10sp"
-            android:text="  Short Term"
-            android:textSize="34sp" />
-
-        <EditText
-            android:id="@+id/qnty_short_term"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12sp"
-            android:layout_marginBottom="10sp"
-            android:ems="10"
-            android:hint="0"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/amnt_short_term"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12sp"
-            android:layout_marginBottom="10sp"
-            android:ems="11"
-            android:hint="0"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Buy"
-            app:rippleColor="@color/ripple" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10sp"
-            android:layout_marginBottom="50dp"
-            android:background="@color/black" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10sp"
-            android:text="  Long Term"
-            android:textSize="34sp" />
-
-        <EditText
-            android:id="@+id/qnty_long_term"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12sp"
-            android:layout_marginBottom="10sp"
-            android:ems="10"
-            android:hint="0"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/amnt_long_term"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12sp"
-            android:layout_marginRight="12sp"
-            android:layout_marginBottom="10sp"
-            android:ems="11"
-            android:hint="0"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Buy"
-            app:rippleColor="@color/ripple" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
