@@ -6,9 +6,15 @@
         android:title="Len" />
 
     <item
-        android:id="@+id/dashboard_btn"
+        android:id="@+id/den_btn"
         android:icon="@drawable/ic_baseline_arrow_downward_24"
         android:title="Den" />
+
+
+    <item
+        android:id="@+id/dashboard_btn"
+        android:icon="@drawable/ic_portfolio"
+        android:title="Portfolio" />
 
     <item
         android:id="@+id/profile_btn"

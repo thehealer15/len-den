@@ -1,4 +1,6 @@
 package RecyclerViewRelatedAll;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;;
@@ -9,6 +11,8 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app.R;
+
+import Screens.Payment_Acvt;
 
 public class LenAdapter extends RecyclerView.Adapter<LenAdapter.ViewHolder>{
     private feed_item_model[] listdata;
@@ -37,7 +41,13 @@ public class LenAdapter extends RecyclerView.Adapter<LenAdapter.ViewHolder>{
         holder.deal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "call another activity here to facilitate payments", Toast.LENGTH_SHORT).show();
+                try{
+                    Intent i = new Intent(view.getContext(), Payment_Acvt.class);
+                    view.getContext().startActivity(i);
+                }catch (Exception e){
+                    Log.d("lenAdapter_onclick" , e.getMessage());
+                    Toast.makeText(view.getContext(), "something went wrong!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

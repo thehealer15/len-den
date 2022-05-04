@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name="Screens.Payment_Acvt"
+            android:exported="false" />
         <activity
             android:name="Screens.authentication.WelcomeActivity"
             android:exported="true" />

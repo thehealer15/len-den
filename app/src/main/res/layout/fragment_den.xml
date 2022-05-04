@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".denFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:orientation="vertical"
+        android:padding="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/credit_score_den"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:hint="your credit score"
+            android:padding="10sp"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/interest_rate_den"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:hint="interest rate_den"
+            android:padding="10sp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/amount_den"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:hint="Amount"
+            android:padding="10sp"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/tenure_den"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:hint="Tenure  years"
+            android:padding="10sp"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/usr_lend_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:padding="10sp"
+
+            android:text="Put deal on table!!"
+            android:textSize="18sp"
+            app:rippleColor="@color/ripple" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

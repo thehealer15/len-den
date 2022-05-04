@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
             case R.id.dashboard_btn:
                 fragment = new Screens.fragment_dashboard();
                 break;
+            case R.id.den_btn:
+                fragment = new denFragment(); break;
 
             case R.id.profile_btn:
                 fragment = new Screens.fragment_profile();
@@ -125,7 +127,8 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         Fragment temp;
         switch (fragmentNumber){
             case 1: temp = new feed_fragment(); break;
-            case 2: temp = new fragment_dashboard() ; break;
+            case 2: temp = new denFragment(); break;
+            case 3: temp = new fragment_dashboard() ; break;
             default: temp = new fragment_profile();break;
         }
         loadFragment(temp);
