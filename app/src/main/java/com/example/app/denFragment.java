@@ -31,7 +31,7 @@ public class denFragment extends Fragment {
     View parent;
     EditText amount , tenure , interest_rate;
     TextView credit_score;
-    DatabaseReference root_ref;
+    DatabaseReference root_ref , orders_history;
     Random rd ;
     public denFragment() {
         // Required empty public constructor
@@ -51,17 +51,21 @@ public class denFragment extends Fragment {
          parent =  inflater.inflate(R.layout.fragment_den, container, false);
         put_deal_on_table = parent.findViewById(R.id.usr_lend_btn);
         init();
-            DatabaseReference den_ref = root_ref.child("den");
-            put_deal_on_table.setOnClickListener(new View.OnClickListener() {
+            DatabaseReference ref = root_ref.child("portfolio").child(FirebaseAuth.getInstance().getUid())
+.child("borrowed");
+            orders_history = root_ref.child("orders").child(FirebaseAuth.getInstance().getUid());
+        put_deal_on_table.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    String val = amount.getText().toString();
+                    Toast.makeText(getContext(), amount.getText().toString(), Toast.LENGTH_SHORT).show();
                     rd = new Random();
                     
 //                    den_ref.child(FirebaseAuth.getInstance().getUid()+ "-" + rd.nextInt()).updateChildren(len_info);
                     feed_item_model model = new feed_item_model(credit_score.getText().toString(),  amount.getText().toString()
                             ,  tenure.getText().toString(), interest_rate.getText().toString());
                     try{
-                        den_ref.child(FirebaseAuth.getInstance().getUid()).child(""+rd.nextInt()).setValue(model);
+                        ref.setValue(amount.getText().toString());
                     }catch (Exception e){
                         Log.d("uploading den class to firebase" , e.getMessage());
                         Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
@@ -69,6 +73,9 @@ public class denFragment extends Fragment {
                     amount.setText("");
                     tenure.setText("");
                     interest_rate.setText("");
+
+                    // add order to list here
+                    orders_history.child(""+new Random().nextInt()).child("Borrowed: ").setValue(val);
                 }
             });
 

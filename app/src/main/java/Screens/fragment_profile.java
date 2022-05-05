@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,9 @@ public class fragment_profile extends Fragment {
     private Context context;
     private CardView account;
     private Button allOrders, helpNSupport ,log_out;
+
+    RecyclerView orders_recycler;
+
 
     @Override
     public void onAttach(@NonNull Context context) {

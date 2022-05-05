@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.4" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/item_feed_card.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/order_item.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/welcome_activity.xml" value="0.2609375" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />
         <entry key="app/src/main/res/menu/switch_mode.xml" value="0.275" />

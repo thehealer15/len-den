@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,6 +35,9 @@ import com.google.firebase.auth.FirebaseUser;
 import RecyclerViewRelatedAll.LenAdapter;
 import RecyclerViewRelatedAll.feed_item_model;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
+import java.util.ArrayList;
+
 /*
 * my features :==>
     Basically i can keep 2 types of Instruments;
@@ -75,9 +79,10 @@ public class feed_fragment extends Fragment {
     private Context context;
     RecyclerView lendingView;
     DatabaseReference root_ref , den_ref;
-
+//    ArrayList<feed_item_model> data = new ArrayList<>();
+    int index = 0;
     feed_item_model data[] = new feed_item_model[]{
-//    public feed_item_model(String credit_score, String amount, String tenure, String interest_rate) {
+//    public feed_item_model(String credit_score, String amount, String tenure, String interest_rate)1 {
             new feed_item_model("435" , "100 inr" , "2 years" , "5.678"),
             new feed_item_model("451" , "100 inr" , "2 years" , "5.678"),
             new feed_item_model("435" , "100 inr" , "2 years" , "5.678"),
@@ -100,16 +105,31 @@ public class feed_fragment extends Fragment {
         // Inflate the layout for this fragment
         parentHolder =  inflater.inflate(R.layout.feed_fragment, container, false);
         lendingView = parentHolder.findViewById(R.id.lendgin_view);
-
+        FirebaseApp.initializeApp(context);
         LenAdapter adapter = new LenAdapter(data);
-        root_ref = FirebaseDatabase.getInstance().getReference();
-        den_ref = root_ref.child("den");
 
-        FirebaseRecyclerOptions<feed_item_model> options
-                = new FirebaseRecyclerOptions.Builder<feed_item_model>()
-                .setQuery(den_ref, feed_item_model.class)
-                .build();
+
         try{
+            root_ref = FirebaseDatabase.getInstance().getReference();
+            den_ref = root_ref.child("den");
+//        den_ref.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+//                    for(DataSnapshot temp : dataSnapshot.getChildren()){
+//                        for(DataSnapshot x : temp.getChildren()){
+//                            feed_item_model model2 = x.getValue(feed_item_model.class);
+//                            data[index++] = (model2);
+//                        }
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
             lendingView.setHasFixedSize(true);
             lendingView.setLayoutManager(new LinearLayoutManager(context));

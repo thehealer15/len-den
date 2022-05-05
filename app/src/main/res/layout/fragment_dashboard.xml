@@ -53,7 +53,7 @@
                 android:layout_margin="5sp"
                 android:padding="5sp"
                 android:paddingLeft="6sp"
-                android:text="Lent"
+                android:text="Liable to pay"
                 android:textSize="24sp" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_margin="5sp"
                 android:padding="5sp"
                 android:paddingLeft="6sp"
-                android:text="Borrowed"
+                android:text="Liable to recieve"
                 android:textSize="24sp" />
 
             <TextView

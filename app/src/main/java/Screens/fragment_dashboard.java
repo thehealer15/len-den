@@ -27,7 +27,7 @@ public class fragment_dashboard extends Fragment {
 
     private View parentHolder;
     private Context context;
-    private DatabaseReference root , user_portfolio;
+    private DatabaseReference root ;
     TextView short_term_portfolio_value , long_term_portfolio_value;
     Button call_support_btn;
 
@@ -46,8 +46,8 @@ public class fragment_dashboard extends Fragment {
          short_term_portfolio_value = parentHolder.findViewById(R.id.short_term_portfolio);
          long_term_portfolio_value= parentHolder.findViewById(R.id.long_term_portfolio);
 
-         root = FirebaseDatabase.getInstance().getReference().child("portfolio");
-        user_portfolio = root.child(FirebaseAuth.getInstance().getUid());
+         root = FirebaseDatabase.getInstance().getReference().child("portfolio").child(FirebaseAuth.getInstance().getUid());
+
         update_port_folio();
 
         call_support_btn.setOnClickListener(new View.OnClickListener() {
@@ -70,10 +70,10 @@ public class fragment_dashboard extends Fragment {
     }
     private  void update_port_folio() {
         try {
-            user_portfolio.child("short_term").addValueEventListener(new ValueEventListener() {
+            root.child("lent").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                   Integer value = snapshot.getValue(Integer.class);
+                   String value = snapshot.getValue(String.class);
                     short_term_portfolio_value.setText("\t\t" + value);
                 }
 
@@ -83,10 +83,10 @@ public class fragment_dashboard extends Fragment {
                 }
             });
 
-            user_portfolio.child("long_term").addValueEventListener(new ValueEventListener() {
+            root.child("borrowed").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    Integer value = snapshot.getValue(Integer.class);
+                    String value = snapshot.getValue(String.class);
                     long_term_portfolio_value.setText("\t\t" + value);
                 }
 
