@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Screens.fragment_dashboard"
+    android:padding="15sp"
 
 
-    >
+    tools:context="Screens.fragment_dashboard">
 
     <View
         android:id="@+id/view2"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200sp"
-        android:padding="10sp"
+        android:padding="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,7 +53,7 @@
                 android:layout_margin="5sp"
                 android:padding="5sp"
                 android:paddingLeft="6sp"
-                android:text="Long Term Portfolio"
+                android:text="Lent"
                 android:textSize="24sp" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_margin="5sp"
                 android:padding="5sp"
                 android:paddingLeft="6sp"
-                android:text="Short Term Portfolio"
+                android:text="Borrowed"
                 android:textSize="24sp" />
 
             <TextView

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +19,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.UUID;
+
+import RecyclerViewRelatedAll.feed_item_model;
 
 
 public class denFragment extends Fragment {
@@ -28,6 +32,7 @@ public class denFragment extends Fragment {
     EditText amount , tenure , interest_rate;
     TextView credit_score;
     DatabaseReference root_ref;
+    Random rd ;
     public denFragment() {
         // Required empty public constructor
     }
@@ -37,6 +42,7 @@ public class denFragment extends Fragment {
         credit_score = parent.findViewById(R.id.credit_score_den);
         interest_rate = parent.findViewById(R.id.interest_rate_den);
         root_ref = FirebaseDatabase.getInstance().getReference();
+
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,13 +55,20 @@ public class denFragment extends Fragment {
             put_deal_on_table.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Map<String, Object> len_info = new HashMap<>();
-                    len_info.put("credit_score", credit_score.getText().toString());
-                    len_info.put("amount", amount.getText().toString());
-                    len_info.put("tenure", tenure.getText().toString());
-                    len_info.put("interest_rate", interest_rate.getText().toString());
-
-                    den_ref.child(""+c++).updateChildren(len_info);
+                    rd = new Random();
+                    
+//                    den_ref.child(FirebaseAuth.getInstance().getUid()+ "-" + rd.nextInt()).updateChildren(len_info);
+                    feed_item_model model = new feed_item_model(credit_score.getText().toString(),  amount.getText().toString()
+                            ,  tenure.getText().toString(), interest_rate.getText().toString());
+                    try{
+                        den_ref.child(FirebaseAuth.getInstance().getUid()).child(""+rd.nextInt()).setValue(model);
+                    }catch (Exception e){
+                        Log.d("uploading den class to firebase" , e.getMessage());
+                        Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                    }
+                    amount.setText("");
+                    tenure.setText("");
+                    interest_rate.setText("");
                 }
             });
 

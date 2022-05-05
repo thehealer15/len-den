@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         FirebaseAuth m = FirebaseAuth.getInstance();
         FirebaseUser u = m.getCurrentUser();
         if(u == null || !signedIn){
-            Toast.makeText(getApplicationContext(), "Not sign in", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
             finish();
         }
@@ -56,8 +55,6 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         Intent authen = getIntent();
         String path = authen.getStringExtra("path");
         if(Objects.equals(path, "MainActivity")){
-            Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Authentication successful", Snackbar.LENGTH_LONG);
-            snackbar.show();
             loadFragment(new feed_fragment());
         }
     }
